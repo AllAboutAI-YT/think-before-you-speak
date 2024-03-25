@@ -25,7 +25,7 @@ CYAN = '\033[96m'
 YELLOW = '\033[93m'
 RESET_COLOR = '\033[0m'
 
-def text_to_speech(text, voice_id="G17SuINrv2H9FC6nvetn", filename="output.mp3"):
+def text_to_speech(text, voice_id="YOUR VOICE ID", filename="output.mp3"):
     # Get the output file path from the environment variable
     output_file_path = os.getenv("OUTPUT_FILE_PATH")
     
