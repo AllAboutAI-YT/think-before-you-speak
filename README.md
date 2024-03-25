@@ -7,4 +7,4 @@ Think Before You Speak
 4. SET Your API Keys and File PATH in .env
 5. SET Your Voice ID in def text_to_speech from Eleven Labs
 6. Adjust Prompts
-7. Run tbyp.py
+7. Run tbyp2.py
