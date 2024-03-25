@@ -1,0 +1,6 @@
+anthropic
+python-dotenv
+requests
+pyaudio
+pydub
+openai
