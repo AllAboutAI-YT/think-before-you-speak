@@ -12,7 +12,8 @@ load_dotenv()
 
 api_keys = {
     "openai": os.getenv("OPENAI_API_KEY"),
-    "anthropic": os.getenv("ANTHROPIC_API_KEY")
+    "anthropic": os.getenv("ANTHROPIC_API_KEY"),
+    "elevenlabs": os.getenv("ELEVENLABS_API_KEY")
 }
 client = {
     "openai": openai.OpenAI(api_key=api_keys["openai"]),
