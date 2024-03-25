@@ -25,23 +25,25 @@ CYAN = '\033[96m'
 YELLOW = '\033[93m'
 RESET_COLOR = '\033[0m'
 
-def text_to_speech(text, voice_id="G17SuINrv2H9FC6nvetn", xi_api_key="", output_file_path='C:/Users/kris_/Python/tbyp/voice', filename="output.mp3"):
-
+def text_to_speech(text, voice_id="G17SuINrv2H9FC6nvetn", filename="output.mp3"):
+    # Get the output file path from the environment variable
+    output_file_path = os.getenv("OUTPUT_FILE_PATH")
+    
     # Ensure the directory exists
     if not os.path.exists(output_file_path):
         os.makedirs(output_file_path)
-
+    
     # Complete file path
     full_file_path = os.path.join(output_file_path, filename)
-
+    
     # URL and headers for the ElevenLabs API request
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
     headers = {
         "Accept": "audio/mpeg",
         "Content-Type": "application/json",
-        "xi-api-key": xi_api_key
+        "xi-api-key": api_keys["elevenlabs"]
     }
-
+    
     # Data payload for the API request
     data = {
         "text": text,
@@ -51,10 +53,10 @@ def text_to_speech(text, voice_id="G17SuINrv2H9FC6nvetn", xi_api_key="", output_
             "similarity_boost": 0.5
         }
     }
-
+    
     # Making a POST request to the API
     response = requests.post(url, json=data, headers=headers)
-
+    
     # Check if the request was successful
     if response.status_code == 200:
         # Writing the received audio content to the specified file
