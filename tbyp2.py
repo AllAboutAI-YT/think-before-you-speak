@@ -133,7 +133,7 @@ t1 = anthropic_chat(f"USERs Question:{qa}\n\nPicture your self in the same situa
 t2 = anthropic_chat(f"USER`s Question:{qa}\n\nYour thoughts and reflections about the USERs questions:{t1}\n\nNow ONLY answer the USER`s question, give a SHORT and CLEAR answer (DONT USE *), in a personal tone based on your thoughts and reflections:", system_message)  
 
 text_to_speech(t2)
-play_audio(output_file_path)
+play_audio(full_file_path)
 
 system_message2 = "You are an expert in analysing and giving ratings to the best answers to a human from a given question"
 
